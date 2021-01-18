@@ -34,4 +34,10 @@ public class OrderController {
         log.info("TEST");
         return storageClient.test();
     }
+
+    @GetMapping("/testString")
+    public String testString() {
+        log.info("TEST");
+        return "testString";
+    }
 }
