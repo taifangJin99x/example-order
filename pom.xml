@@ -36,8 +36,19 @@
         <!-- https://mvnrepository.com/artifact/io.seata/seata-all -->
         <dependency>
             <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>1.2.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.seata</groupId>
+                    <artifactId>seata-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.seata</groupId>
             <artifactId>seata-all</artifactId>
-            <version>${seata.version}</version>
+            <version>1.2.0</version>
         </dependency>
         <!--添加sleuth的坐标位置-->
         <dependency>

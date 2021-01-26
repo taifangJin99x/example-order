@@ -31,7 +31,7 @@ public class ExampleOrderApplication {
     private String applicationName;
     @PostConstruct
     public void registerInstance() throws NacosException {
-        namingService.registerInstance(applicationName,"47.103.133.107",serverPort);
+        namingService.registerInstance(applicationName,"127.0.0.1",serverPort);
     }
 
 }

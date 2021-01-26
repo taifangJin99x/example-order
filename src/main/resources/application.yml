@@ -10,9 +10,9 @@ server:
 #      defaultZone: http://127.0.0.1:8761/eureka/
 nacos:
   discovery:
-    server-addr: 47.103.133.107:8848
+    server-addr: 127.0.0.1:8848
   config:
-    server-addr: 47.103.133.107:8848
+    server-addr: 127.0.0.1:8848
 
 spring:
   datasource:
@@ -25,20 +25,40 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 47.103.133.107:8848
+        server-addr: 127.0.0.1:8848
+        group: SEATA_GROUP
     sentinel:
       transport:
         dashboard: 127.0.0.1:8080
       #eager: true
+seata:
+  enabled: true
+  application-id: order-seata
+  tx-service-group: my_test_tx_group
+  enable-auto-data-source-proxy: true
+  service:
+    vgroup-mapping:
+      my_test_tx_group: my_test_tx_group
+    grouplist:
+      - localhost:8091
+  config:
+    type: nacos
+    nacos:
+      namespace:
+      serverAddr: localhost:8848
+      group: SEATA_GROUP
+  registry:
+    type: nacos
+    nacos:
+      namespace:
+      server-addr: localhost:8848
 
 mybatis-plus:
   global-config:
     db-config:
       id-type: auto
       field-strategy: not_empty
-
       column-underline: true
-
       logic-delete-value: 0
       logic-not-delete-value: 1
       db-type: mysql
