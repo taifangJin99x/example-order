@@ -1,7 +1,7 @@
 package com.example.order.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @className: com.example.order.orderservice.client-> storageClient
@@ -15,4 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface StorageClient {
     @GetMapping("/storage/test")
     String test();
+    @RequestMapping(value = "/storage/deStorage",method = RequestMethod.GET)
+    void deStorage(@RequestParam("code") String code);
+    @RequestMapping(value = "/storage/deStorageError",method = RequestMethod.GET)
+    void deStorageError(@RequestParam("code")String code);
 }
