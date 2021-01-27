@@ -67,3 +67,6 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
   type-aliases-package: com.example.order.orderservice.entity
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
