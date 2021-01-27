@@ -16,8 +16,8 @@ nacos:
 
 spring:
   datasource:
-    url: jdbc:mysql://rm-bp1v9eku86360zau23o.mysql.rds.aliyuncs.com:3306/seata_order?useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: root
+    url: jdbc:mysql://taifangjin.rwlb.rds.aliyuncs.com:3306/seata_order?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: dev
     password: Lgy12500
     driver-class-name: com.mysql.jdbc.Driver
   application:
