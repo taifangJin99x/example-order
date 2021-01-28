@@ -19,4 +19,6 @@ public interface StorageClient {
     void deStorage(@RequestParam("code") String code);
     @RequestMapping(value = "/storage/deStorageError",method = RequestMethod.GET)
     void deStorageError(@RequestParam("code")String code);
+    @RequestMapping(value = "/storage/updateStorage",method = RequestMethod.GET)
+    void updateStorage(@RequestParam("code")String code);
 }

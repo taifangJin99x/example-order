@@ -38,13 +38,19 @@ public class OrderService {
         orderDAO.insert(order);
         storageClient.deStorage(code);
     }
+
+
     public void createOrderError() {
         Order order = new Order();
         String code = System.currentTimeMillis()+"";
         order.setCount(1);
         order.setCommodityCode(code);
         order.setMoney(BigDecimal.valueOf(111L));
+
         orderDAO.insert(order);
+        storageClient.deStorage(code);
+        storageClient.updateStorage(code);
+
         storageClient.deStorageError(code);
     }
 
